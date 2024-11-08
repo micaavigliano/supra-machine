@@ -1,4 +1,5 @@
 import client from "@/lib/contentful";
+import Header from "./components/header/Header";
 
 const getBlogEntries = async() => {
   const entries = await client.getEntries({ content_type: 'title' });
@@ -10,7 +11,8 @@ export default async function Home() {
 
   return (
     <>
-      <h1>Testing</h1>
+      <Header />
+      <h1></h1>
       {blogEntries.items.map((blog, index) => (
         <div key={index}>
           <h1>{blog.fields.title}</h1>
