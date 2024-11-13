@@ -1,12 +1,12 @@
 import client from "@/lib/contentful";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
 import Carousel from "./components/Carousel/Carousel";
+import Cardslist from "./components/cardslist/Cardslist";
 
-const getBlogEntries = async () => {
-  const entries = await client.getEntries({ content_type: 'title' });
-  return entries;
-}
+
+// const getBlogEntries = async () => {
+//   const entries = await client.getEntries({ content_type: 'title' });
+//   return entries;
+// }
 
 const getImagesCarousel = async () => {
   const images = await client.getEntries({ content_type: 'carousel' })
@@ -14,15 +14,13 @@ const getImagesCarousel = async () => {
 }
 
 export default async function Home() {
-  const blogEntries = await getBlogEntries();
-  const imagesCarousel = await getImagesCarousel()
+  const imagesCarousel = await getImagesCarousel();
 
   return (
-    <>
-      <Header />
+    <div>
       <Carousel images={imagesCarousel} />
-      <Footer />
-    </>
+      <Cardslist />
+    </div>
 
   );
 }

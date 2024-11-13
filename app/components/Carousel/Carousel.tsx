@@ -1,4 +1,7 @@
+"use client";
 import { Entry, EntrySkeletonType } from "contentful";
+import { Carousel as ResponsiveCarousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from "next/image";
 
 interface ImageFields {
@@ -23,21 +26,24 @@ const Carousel = ({ images }: CarouselProps) => {
     return <h2>No images available</h2>;
   }
 
+  const imagesCarousel = ['/images/carousel-1.jpg', '/images/carousel-2.jpg', '/images/carousel-3.jpg', '/images/carousel-4.jpg']
+
   return (
     <>
-      <h2>funciona carousel</h2>
-      <div>
-        {(images[0].fields.images as { fields: ImageFields }[]).map((img, index) => (
-          <Image
-            key={index}
-            src={img.fields.file.url.startsWith("//") ? `https:${img.fields.file.url}` : img.fields.file.url}
-            alt="carousel image"
-            width={500}
-            height={300}
-            className="w-auto h-auto"
-          />
+      <ResponsiveCarousel showThumbs={false} autoPlay={true} infiniteLoop={true} dynamicHeight={true}>
+        {imagesCarousel.map((img, index) => (
+          <div key={index} style={{ height: '600px' }}>
+            <Image
+              src={img}
+              alt={`carousel image ${index + 1}`}
+              objectFit="cover"
+              className="h-full w-full"
+              width={500}
+              height={500}
+            />
+          </div>
         ))}
-      </div>
+      </ResponsiveCarousel>
     </>
   );
 };
