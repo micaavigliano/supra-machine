@@ -1,7 +1,8 @@
 import client from "@/lib/contentful";
 import Carousel from "./components/Carousel/Carousel";
 import Cardslist from "./components/cardslist/Cardslist";
-
+import CompanyText from "./components/companyText/CompanyText";
+import OtherServices from "./components/otherServices/OtherServices";
 
 // const getBlogEntries = async () => {
 //   const entries = await client.getEntries({ content_type: 'title' });
@@ -19,7 +20,9 @@ export default async function Home() {
   return (
     <div>
       <Carousel images={imagesCarousel} />
+      <CompanyText />
       <Cardslist />
+      <OtherServices />
     </div>
 
   );
