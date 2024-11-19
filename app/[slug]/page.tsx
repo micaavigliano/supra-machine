@@ -27,8 +27,8 @@ interface CardContentFields extends EntrySkeletonType {
 }
 
 interface DynamicPageProps {
-    params: { slug: string };
-    searchParams: { tab?: string };
+    params: Promise<{ slug: string }>;
+    searchParams: Promise<{ tab?: string }>;
 }
 
 const DynamicPage = async ({ params, searchParams }: DynamicPageProps) => {
