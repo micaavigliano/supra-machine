@@ -1,45 +1,29 @@
 "use client";
-import { Entry, EntrySkeletonType } from "contentful";
 import { Carousel as ResponsiveCarousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from "next/image";
 
-interface ImageFields {
-  file: {
-    url: string;
-  };
-}
 
-interface CarouselImageFields extends EntrySkeletonType {
-  images: {
-    fields: ImageFields;
-  }[];
-}
-
-type CarouselProps = {
-  images: Entry<CarouselImageFields>[];
-};
-
-
-const Carousel = ({ images }: CarouselProps) => {
-  if (!Array.isArray(images) || images.length === 0 || !images[0].fields.images) {
-    return <h2>No images available</h2>;
-  }
-
+const Carousel = () => {
   const imagesCarousel = ['/images/carousel-1.jpg', '/images/carousel-2.jpg', '/images/carousel-3.jpg', '/images/carousel-4.jpg']
 
   return (
     <>
-      <ResponsiveCarousel showThumbs={false} autoPlay={true} infiniteLoop={true} dynamicHeight={true}>
+      <ResponsiveCarousel
+        showThumbs={false}
+        autoPlay={true}
+        infiniteLoop={true}
+        dynamicHeight={false}
+      >
         {imagesCarousel.map((img, index) => (
-          <div key={index} style={{ height: '600px' }}>
+          <div key={index} style={{ height: "400px", position: "relative" }}>
             <Image
               src={img}
               alt={`carousel image ${index + 1}`}
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               className="h-full w-full"
-              width={500}
-              height={500}
+              fill
+              priority
             />
           </div>
         ))}
