@@ -26,16 +26,12 @@ interface CardContentFields extends EntrySkeletonType {
     imagesArray: Asset[];
 }
 
-interface Params {
-    slug: string;
-}
-
-interface Context {
-    params: Params;
+interface DynamicPageProps {
+    params: { slug: string };
     searchParams: { tab?: string };
 }
 
-const DynamicPage = async ({ params, searchParams }: Context) => {
+const DynamicPage = async ({ params, searchParams }: DynamicPageProps) => {
     const { slug } = await params;
 
     const response = await client.getEntries<CardContentFields>({
@@ -191,6 +187,7 @@ const DynamicPage = async ({ params, searchParams }: Context) => {
     );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isDocument(value: any): value is Document {
     return value && typeof value === 'object' && 'content' in value;
 }

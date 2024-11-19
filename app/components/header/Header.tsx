@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
@@ -6,7 +7,7 @@ const Header = () => {
         <header className=" flex justify-between items-center bg-white py-4 px-8 shadow border-b-2 border-[#D2CECE]">
             <div className="flex items-center">
                 <Link href='/'>
-                    <img src="supra-logo.jpeg" alt="Supra Machine Logo" className="h-20" />
+                    <Image src="supra-logo.jpeg" alt="Supra Machine Logo" className="h-20" />
                 </Link>
             </div>
 

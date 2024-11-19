@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from "next/image";
 
 interface CarouselImageFields {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   images: any;
 }
 
@@ -21,6 +22,7 @@ const CarouselList = ({ images }: CarouselImageFields) => {
       dynamicHeight={false}
       className="flex justify-center"
     >
+      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
       {images[0].fields.images.map((asset: any, assetIndex: number) => {
         if (
           typeof asset.fields === 'object' &&
@@ -49,6 +51,7 @@ const CarouselList = ({ images }: CarouselImageFields) => {
 
         return null;
       })
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .filter((element: any): element is JSX.Element => element !== null)}
     </ResponsiveCarousel>
   );

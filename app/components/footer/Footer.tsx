@@ -1,5 +1,3 @@
-import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
-
 const Footer = () => {
     return (
         <footer className="bg-[#F2F2F2] py-6 px-8" id='contacto'>

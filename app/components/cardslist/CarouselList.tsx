@@ -5,6 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from "next/image";
 
 interface CarouselImageFields {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   images: any;
 }
 
