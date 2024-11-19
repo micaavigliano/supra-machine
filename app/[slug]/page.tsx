@@ -9,7 +9,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import CarouselVentilacion from '../components/cardslist/CarouselVentilacion';
 
 const getGastronomicalImg = async () => {
-    const imgs = await client.getEntries({ content_type: 'gastronomica' })
+    const imgs = await client.getEntries({ content_type: 'gastronomica' });
     return imgs.items
 }
 
