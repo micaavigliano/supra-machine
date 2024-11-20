@@ -19,15 +19,20 @@ const OtherServices = () => {
     return (
         <div className="w-full max-w-7xl mx-auto px-4">
             <h2 className='text-3xl text-gray-800 text-center py-16 font-bold'>OTROS SERVICIOS</h2>
-            <div className='flex justify-center items-center gap-20'>
+            <div className='flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-20'>
                 {otherServices.map((service, index) => (
-                    <div key={index} className='flex items-center'>
+                    <div key={index} className='flex flex-col items-center lg:items-start'>
                         <div className='text-center text-gray-700 text-xl'>
                             <p>{service.line1}</p>
                             <p>{service.line2}</p>
                         </div>
+                        {/* Add yellow line under each service */}
+                        <div
+                            className={`w-full h-[3px] bg-yellow-500 mt-4 lg:hidden`}
+                        ></div>
+                        {/* Divider between services for larger screens */}
                         {index < otherServices.length - 1 && (
-                            <div className='h-16 w-[3px] bg-yellow-500 ml-20'></div>
+                            <div className='hidden lg:block h-16 w-[3px] bg-yellow-500 ml-20'></div>
                         )}
                     </div>
                 ))}

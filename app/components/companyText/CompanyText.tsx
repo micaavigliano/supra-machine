@@ -2,7 +2,7 @@ import React from 'react';
 
 const CompanyText = () => {
     return (
-        <div className='bg-white py-12 px-44 font-sans text-[#444444]' id="quienes-somos">
+        <div className='bg-white py-12 px-10 md:px-20 lg:px-44 font-sans text-[#444444]' id="quienes-somos">
             <p>
                 Somos una <strong>empresa de ingeniería y montajes</strong> especializados en brindar un
                 servicio completo abarcando el total de las necesidades del trabajo a realizar,

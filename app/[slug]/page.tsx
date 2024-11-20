@@ -82,7 +82,7 @@ const DynamicPage = async ({ params, searchParams }: DynamicPageProps) => {
 
 
     return (
-        <div className="py-10 px-20">
+        <div className="lg:py-10 lg:px-20 py-10 px-5">
             <nav>
                 <Link href="/" className='flex flex-row items-center'>
                     <GrFormPrevious /> Volver atrás
@@ -116,7 +116,7 @@ const DynamicPage = async ({ params, searchParams }: DynamicPageProps) => {
                     {selectedTab === 'industrial' && (
                         <div className="mt-6 flex flex-col items-center justify-center">
                             <CarouselVentilacion images={gastronomicaImages} />
-                            <section className='px-52 pt-20 pb-10'>
+                            <section className='lg-px-52 px-20 pt-20 pb-10'>
                                 <p>
                                     Proyectos completos, <strong>memorias de cálculo, venta e instalación de ventiladores centrífugos y axiales.</strong>
                                     <br />
@@ -139,7 +139,7 @@ const DynamicPage = async ({ params, searchParams }: DynamicPageProps) => {
                     {selectedTab === 'gastronomica' && (
                         <div className="mt-6 flex flex-col items-center justify-center">
                             <CarouselVentilacion images={gastronomicaImages} />
-                            <section className='px-52 pt-20 pb-10'>
+                            <section className='lg-px-52 px-10 pt-20 pb-10'>
                                 <p>
                                     Fabricación e instalación de <strong>campanas gastronomía profesional</strong>, campanas compensadas a medida con filtros metálicos, acero inoxidable, <strong>conductos antiflama</strong> aptos para habilitación de gas, con persianas cortallama y conductos de chapa de acero con soldadura integra en todas sus uniones, juntas bridadas, tapas de inspección abulonadas para limpieza periódica, íntegro sellado apto para temperatura, ventiladores aptos para trabajar con temperatura y grasa.
                                     <br />
@@ -168,7 +168,7 @@ const DynamicPage = async ({ params, searchParams }: DynamicPageProps) => {
                     ) : (
                         <p>No images available.</p>
                     )}
-                    <section className='px-52 py-20'>
+                    <section className='lg-px-52 px-10 py-20'>
                         {fields.description && isDocument(fields.description) ? (
                             documentToReactComponents(fields.description)
                         ) : (

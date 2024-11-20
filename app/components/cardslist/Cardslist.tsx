@@ -57,9 +57,9 @@ const Cardslist = async () => {
     };
 
     return (
-        <div>
-            <h1 className='text-2xl font-bold mb-4 flex justify-center '>OBRAS Y SERVICIOS</h1>
-            <div className="grid grid-cols-3 gap-6 py-6 px-28">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+            <h1 className='text-2xl font-bold mb-4 text-center'>OBRAS Y SERVICIOS</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {data.map((card, index) => {
                     const slug = card.fields.slug as unknown as string;
                     const title = card.fields.title as unknown as string;
@@ -73,22 +73,28 @@ const Cardslist = async () => {
 
                             return (
                                 <div key={index} className="rounded-lg shadow-lg overflow-hidden relative flex flex-col h-full" id="obras">
-                                    <Image
-                                        src={imageUrl.startsWith('//') ? `https:${imageUrl}` : imageUrl}
-                                        alt={title}
-                                        width={500}
-                                        height={100}
-                                        className="w-full h-60 object-cover"
-                                    />
-                                    <div className="flex items-center justify-end absolute left-0 right-4 top-56">
-                                        <div className="bg-white p-3 rounded-full">
-                                            <span className="text-2xl text-gray-700">{icon.icon}</span>
+                                    <div className="relative">
+                                        <Image
+                                            src={imageUrl.startsWith('//') ? `https:${imageUrl}` : imageUrl}
+                                            alt={title}
+                                            width={500}
+                                            height={300}
+                                            className="w-full h-60 object-cover"
+                                        />
+                                        <div className="absolute right-4 -bottom-6">
+                                            <div className="bg-white p-3 rounded-full shadow-md">
+                                                <span className="text-2xl text-gray-700">{icon.icon}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="p-7 flex flex-col gap-2 bg-[#F2F2F2] h-full flex-1">
-                                        <h2 className="text-xl text-black mb-2 font-bold">{title.toUpperCase()}</h2>
-                                        <p className="text-sm py-2">{icon?.text}</p>
-                                        <Link href={`/${slug}`} passHref className='mt-auto underline decoration-yellow-400 decoration-2 underline-offset-4'>
+                                    <div className="p-4 md:p-6 flex flex-col gap-2 bg-[#F2F2F2] h-full flex-1">
+                                        <h2 className="text-lg md:text-xl text-black mb-2 font-bold">{title.toUpperCase()}</h2>
+                                        <p className="text-sm md:text-base">{icon?.text}</p>
+                                        <Link
+                                            href={`/${slug}`}
+                                            passHref
+                                            className='mt-auto pt-4 underline decoration-yellow-400 decoration-2 underline-offset-4 hover:text-gray-700 transition-colors'
+                                        >
                                             Leer más
                                         </Link>
                                     </div>
@@ -98,7 +104,7 @@ const Cardslist = async () => {
                     }
                 })}
             </div>
-        </div >
+        </div>
     );
 };
 
