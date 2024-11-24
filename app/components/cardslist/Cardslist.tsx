@@ -36,7 +36,7 @@ const Cardslist = async () => {
         },
         'racks-dispositivos': {
             icon: <FaTools />,
-            text: 'Fabricamos Racks para fábricas, trabajos a medida o desarrollo propio según las necesidades del cliente.'
+            text: 'Elaboramos Racks para fábricas, trabajos a medida o desarrollo propio según las necesidades del cliente.'
         },
         'tuberias': {
             icon: <FaPencilRuler />,
@@ -70,7 +70,7 @@ const Cardslist = async () => {
 
                         if ('fields' in imageAsset && imageAsset.fields.file && imageAsset.fields.file.url) {
                             const imageUrl = imageAsset.fields.file.url;
-
+                            console.log(imageUrl)
                             return (
                                 <div key={index} className="rounded-lg shadow-lg overflow-hidden relative flex flex-col h-full" id="obras">
                                     <div className="relative">
