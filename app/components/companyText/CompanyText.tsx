@@ -13,9 +13,9 @@ const CompanyText = () => {
             </p>
             <br></br>
             <p>
-                Tenemos experiencia en trabajar sin perjudicar la producción, <strong>trabajamos en equipo</strong>
+                Tenemos experiencia en trabajar sin perjudicar la producción, <strong>trabajamos en equipo</strong>{' '}
                 para coordinar tareas de manera tal de reducir al mínimo los tiempos improductivos.
-                <strong>Contamos con personal disponible para realizar trabajos nocturnos, feriados y fines de semana.</strong>
+                <strong>Contamos con personal disponible para realizar trabajos nocturnos, feriados y fines de semana.</strong>{' '}
             </p>
             <br></br>
             <p>
