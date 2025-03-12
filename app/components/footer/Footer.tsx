@@ -25,9 +25,6 @@ const Footer = () => {
                     </p>
                 </div>
 
-                <div className="text-right">
-                    <p className="font-bold text-sm text-[#444444]">PROYECTOS SUPRA MACHINE S.R.L</p>
-                </div>
             </div>
         </footer>
     );
